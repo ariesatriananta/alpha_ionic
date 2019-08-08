@@ -1,0 +1,26 @@
+<ion-header translucent>
+  <ion-toolbar color="primary">
+    <ion-title color="secondary">
+      Scan QRCode
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>QRcode</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{qrcode}}
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-grid>
+      <ion-row style="text-align: center">
+        <ion-col>
+            <ion-button color="primary" (click)="scan()" align-self-center>Scan</ion-button>
+        </ion-col>
+      </ion-row>
+  </ion-grid> 
+</ion-content>

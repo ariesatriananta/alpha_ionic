@@ -1,0 +1,38 @@
+<ion-header translucent>
+  <ion-toolbar color="primary">
+    <ion-title color="secondary">
+      Available Produk
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content fullscreen>
+
+  <ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200" (ionRefresh)="ionRefresh($event)">
+    <ion-refresher-content pullingText="Tarik untuk refresh"></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-button (click)="toggleInfiniteScroll()" expand="block">
+    Toggle Infinite Scroll
+  </ion-button>
+
+  <ion-list>
+    <ion-item button *ngFor="let item of results">
+      <ion-label text-wrap>
+        <h3><b>{{ item.nomor_produksi }}</b></h3>
+        <span style="font-size: 0.75rem;">{{ item.produk_nama }}</span>
+        <p style="font-size: 0.7rem;">{{ item.produk_dimensi }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadInfinite($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
