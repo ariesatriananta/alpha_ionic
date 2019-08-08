@@ -37,7 +37,7 @@ export class AvaPage implements OnInit {
     this.data.subscribe(
       data => {this.results = data;}
     );
-    return this.results;
+    return this.results; 
   }
 
 
